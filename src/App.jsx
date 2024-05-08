@@ -9,7 +9,7 @@ function App() {
     const storedTodos = localStorage.getItem('todos');
     return storedTodos ? JSON.parse(storedTodos) : [];
   });
-
+  const [isDark,setIsDark]=useState(false)
   const [filter, setFilter] = useState('All');
 
   useEffect(() => {
@@ -30,22 +30,24 @@ function App() {
     const filteredTodos = todos.filter(todo => !todo.completed);
     setTodos(filteredTodos);
   };
-
+  const darkmode=()=>{
+    setIsDark(!isDark)
+  }
   return (
     <>
-      <div className='background'> 
+      <div className={isDark ? 'salam' : 'background'}> 
         <div className='container'>
           <div className='todo'>
-            <div className='head'><h2>TODO</h2><i className="fa-solid fa-moon"></i></div>
-            <input type="text" placeholder='Create a new todo…' onKeyPress={handleKeyPress} />
+            <div className='head'><h2>TODO</h2>{isDark ? <i onClick={darkmode} class="fa-solid fa-sun"></i> : <i onClick={darkmode} className="fa-solid fa-moon"></i>}</div>
+            <input className={isDark ? 'blackinput' : 'whiteinput'} type="text" placeholder='Create a new todo…' onKeyPress={handleKeyPress} />
           </div>
-          <TodoList todos={todos} setTodos={setTodos} filter={filter} />
+          <TodoList style={isDark ? 'darkinput': 'input'} todos={todos} setTodos={setTodos} filter={filter} />
 
-          <div className='input__foot'>
-            <button className='all' onClick={() => setFilter('All')}>All</button>
-            <button className='active' onClick={() => setFilter('Active')}>Active</button>
-            <button className='completed' onClick={() => setFilter('Completed')}>Completed</button>
-            <button className='clearAll' onClick={handleRemoveCompleted}>Clear Completed</button>
+          <div className={isDark ? 'huhuh input__foot' : 'input__foot'}>
+            <button className='all' style={{background:"transparent",color:"lime"}} onClick={() => setFilter('All')}>All</button>
+            <button className='active' style={{background:"transparent",color:"lime"}} onClick={() => setFilter('Active')}>Active</button>
+            <button className='completed' style={{background:"transparent",color:"lime"}} onClick={() => setFilter('Completed')}>Completed</button>
+            <button className='clearAll' style={{background:"transparent",color:"lime"}} onClick={handleRemoveCompleted}>Clear Completed</button>
           </div>  
         </div>
       </div>

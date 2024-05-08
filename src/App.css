@@ -31,7 +31,22 @@ flex-direction: column;
   
   background-image: url("./assets/Bitmap.jpg");
 }
-
+.salam{
+  display: flex;
+  flex-direction: column;
+   justify-content: center;
+   align-items: center;
+    height: 450px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    background-image: url("./assets/salam.jpg");
+}
+.salam .container{
+  position: relative;
+  top: 150px;
+}
 .head{
   display: flex;
   justify-content: space-between;
@@ -53,6 +68,8 @@ flex-direction: column;
   display: flex;
   flex-direction: column;
   gap: 50px;
+
+
 }
 
 .todo input{
@@ -87,5 +104,11 @@ flex-direction: column;
   background-color: white;
 }
 
-
-
+.blackinput{
+  background: #25273D;
+  color: white;
+}
+.whiteinput{
+  background: white;
+  color: black;
+}

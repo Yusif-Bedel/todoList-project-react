@@ -3,7 +3,7 @@ import React from 'react';
 import './TodoList.css';
 import TodoItems from '../TodoItems/TodoItems';
 
-const TodoList = ({ todos, setTodos, filter }) => {
+const TodoList = ({ todos, setTodos, filter ,style}) => {
   const handleToggleCompleted = (index) => {
     const updatedTodos = todos.map((todo, i) =>
       index === i ? { ...todo, completed: !todo.completed } : todo
@@ -28,6 +28,7 @@ const TodoList = ({ todos, setTodos, filter }) => {
       {filteredTodos.map((todo, index) => (
         <li key={index}>
           <TodoItems
+            style={style}
             text={todo.text}
             completed={todo.completed}
             onToggleCompleted={() => handleToggleCompleted(index)}

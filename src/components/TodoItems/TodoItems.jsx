@@ -3,20 +3,10 @@
 import React from 'react';
 import "./TodoItems.css";
 
-const TodoItems = ({ text, completed, onToggleCompleted }) => {
+const TodoItems = ({ text, completed, onToggleCompleted ,style}) => {
   return (
     <>
-      <div className='input'>
-        {/* <label className="cr-wrapper">
-          <input
-            className='TodoCheckbox'
-            type="checkbox"
-            checked={completed}
-            onChange={onToggleCompleted}
-          />
-          <div className="cr-input"></div>
-          <span>{text}</span> 
-        </label> */}
+      <div className={style}>
         <label class="control control-checkbox">
                 <input type="checkbox" 
                   className='TodoCheckbox'

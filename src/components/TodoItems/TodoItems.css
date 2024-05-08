@@ -7,8 +7,18 @@
   border-bottom: 1px solid rgba(125, 124, 124, 0.466);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   background-color: white;
+  color: black;
 }
-
+.darkinput{
+    font-size: 16px;
+    width: 100%;
+    
+    padding: 22px 0px 22px 26px;
+    border: none;
+    border-bottom: 1px solid rgba(125, 124, 124, 0.466);
+    background: #25273D;
+    color: white;
+}
 .control {
     font-family: arial;
     display: block;
@@ -121,3 +131,14 @@
 .control-checkbox input:checked + .control_indicator::before {
     animation-name: s-ripple-dup;
 }
+.huhuh{
+    font-size: 16px;
+    width: 100%;
+    
+    padding: 22px 0px 22px 26px;
+    border: none;
+    border-bottom: 1px solid rgba(125, 124, 124, 0.466);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background: #25273D;
+    color: white;
+  }
